@@ -3,6 +3,7 @@ import OpenStreetMap from '@/presentation/components/maps/OpenStreetMap';
 
 // Coordenadas iniciales de la práctica: Pereira, Risaralda.
 const PEREIRA = { latitude: 4.813, longitude: -75.696 };
+const DOSQUEBRADAS = { latitude: 4.834, longitude: -75.676 };
 
 export default function MapScreen() {
   return (
@@ -12,11 +13,13 @@ export default function MapScreen() {
         center={PEREIRA}
         markers={[
           { ...PEREIRA, title: 'Pereira', description: 'Punto inicial de la práctica' },
+          { ...DOSQUEBRADAS, title: 'Dosquebradas', description: 'Punto de referencia de Dosquebradas, Risaralda' },
         ]}
       />
       <View style={styles.banner}>
-        <Text style={styles.title}>Mapa fijo: Pereira</Text>
-        <Text>Latitud: {PEREIRA.latitude.toFixed(3)} | Longitud: {PEREIRA.longitude.toFixed(3)}</Text>
+        <Text style={styles.title}>Mapa fijo: Pereira y Dosquebradas</Text>
+        <Text>Pereira: {PEREIRA.latitude.toFixed(3)}, {PEREIRA.longitude.toFixed(3)}</Text>
+        <Text>Dosquebradas: {DOSQUEBRADAS.latitude.toFixed(3)}, {DOSQUEBRADAS.longitude.toFixed(3)}</Text>
         <Text style={styles.note}>Coordenadas de ejemplo, no del GPS. Toca los marcadores.</Text>
       </View>
     </View>
